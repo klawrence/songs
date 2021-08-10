@@ -7,7 +7,7 @@ class CreateArtists < ActiveRecord::Migration[6.1]
       t.timestamps
     end
 
-    add_index "artists", ["name"], name: "index_artists_on_name", using: :btree
-    add_index "artists", ["slug"], name: "index_artists_on_slug", unique: true, using: :btree
+    add_index :artists, :name
+    add_index :artists, :slug, unique: true
   end
 end
