@@ -9,5 +9,6 @@ class TrackTest < ActiveSupport::TestCase
     track = @dylan.tracks.create! title: 'Mr Tambourine Man'
     assert_equal 'mr-tambourine-man', track.slug
     assert_equal 'Bob Dylan', track.artist.name
+    assert_equal 'Mr Tambourine Man — Bob Dylan', track.to_s
   end
 end
