@@ -5,6 +5,6 @@ class Track < ApplicationRecord
   belongs_to :artist
 
   def to_s
-    "#{title} — #{artist}"
+    "#{artist} — #{title}"
   end
 end
