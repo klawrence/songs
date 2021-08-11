@@ -1,0 +1,52 @@
+@import 'common/constants';
+
+.cookie-banner {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  right: 0;
+
+  padding: $margin;
+
+  background-color: $app-background;
+  color: $text-color-dark;
+
+  border: solid $brand-3 $border-fat;
+  box-shadow: $drop-shadow-top;
+}
+
+.cookie-policy {
+  .cookie-consent {
+    &:before {
+      position: relative;
+      top: 0.2em;
+      font-size: 2em;
+      padding-right: $inset;
+    }
+    &.always-enabled:before {
+      content: '✓';
+      color: $checkbox-check-color;
+    }
+    &.never-enabled:before {
+      content: '✖';
+      color: $text-color-faded;
+    }
+  }
+
+}
+
+
+@include phone-size {
+  .cookie-banner {
+    .text {
+      margin-top: $inset;
+    }
+  }
+}
+
+
+@include bigger-than-phone {
+  .cookie-banner {
+    .actions { float: right; }
+  }
+}

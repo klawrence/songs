@@ -1,0 +1,76 @@
+@import 'common/constants';
+
+
+#page {
+  min-height: $min-height;
+  background-color: $app-background;
+
+  #header { border: $border; }
+  #main {
+    > * {box-sizing: border-box;}
+    #content { min-height: $min-height; }
+  }
+}
+
+@include phone-size {
+  #page {
+    #sidebar { display: none; }
+    #main {
+      padding-bottom: $margin;
+      :target { scroll-margin-top: $header-phone-height + $margin; }
+    }
+  }
+}
+
+@include bigger-than-phone {
+  #page {
+    margin: 0 auto;
+    width: $page-width;
+    max-width: 100%;
+
+    #header {
+      position: fixed;
+      top: 0;
+      width: $page-width;
+      max-width: 100%;
+      height: $header-desktop-height;
+      z-index: 2;
+    }
+
+    #main {
+      margin: $header-desktop-height $margin 0;
+      padding: $margin 0;
+
+      &.with-sidebar {
+        #content { margin-left: $sidebar-width + $margin; }
+        #footer { display: none; }
+      }
+      :target { scroll-margin-top: $header-desktop-height + $margin; }
+
+      #sidebar {
+        position: fixed;
+        top: $header-desktop-height + $margin;
+        bottom: $margin;
+        width: $sidebar-width;
+        overflow: auto;
+      }
+
+    }
+  }
+}
+
+@include tablet-size {
+  #page {
+    #main {
+      &.with-sidebar {
+        #content { margin-left: $tablet-sidebar-width + $margin; }
+        #footer { display: none; }
+      }
+
+      #sidebar {
+        width: $tablet-sidebar-width;
+      }
+    }
+  }
+}
+

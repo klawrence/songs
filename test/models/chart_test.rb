@@ -17,7 +17,7 @@ class ChartTest < ActiveSupport::TestCase
     assert_equal '3. The Beatles — Eleanor Rigby', chart.entries[2].to_s
 
     assert_equal 1, chart.entries[0].position
-    assert_equal 'Mr Tambourine Man — Bob Dylan', chart.entries[0].track.to_s
+    assert_equal 'Bob Dylan — Mr Tambourine Man', chart.entries[0].track.to_s
     assert_equal 'Bob Dylan', chart.entries[0].track.artist.to_s
   end
 end

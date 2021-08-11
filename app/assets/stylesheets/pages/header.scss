@@ -1,0 +1,90 @@
+@import 'common/constants';
+
+.header {
+  display: flex;
+  align-items: center;
+
+  background-color: $header-background;
+  border: $border;
+
+  .logo {
+    position: relative;
+    margin-right: $margin;
+  }
+
+  .top-menu {
+    align-self: flex-end;
+    font-size: 1.2rem;
+    li {
+      display: inline-block;
+      margin: 0 $margin;
+    }
+  }
+
+  .icons {
+    display: flex;
+    justify-content: flex-end;
+
+    .action {
+      .label {
+        font-variant: none;
+        text-transform: uppercase;
+      }
+      &.search {border-color: transparent;}
+      &.off { display: none; }
+    }
+  }
+}
+
+@include phone-size {
+  .header {
+    padding: $inset $inset-tiny;
+    justify-content: space-between;
+
+    .logo {
+      flex-shrink: 1;
+      width: 12em;
+      &.mini { width: 2.0em; }
+    }
+
+    .icons {
+      flex-grow: 1;
+      > * {
+        display: flex;
+        align-items: center;
+      }
+    }
+
+    .top-menu {
+      display: none;
+    }
+
+    .action {
+      padding: 0 0.4em;
+      > svg.icon { width: 1.2em; }
+      .label {
+        display: none;
+      }
+    }
+  }
+}
+
+
+@include bigger-than-phone {
+  .header {
+    justify-content: space-between;
+    padding: $margin;
+
+    .logo {
+      flex-shrink: 0;
+      &.main { width: 12em; }
+      &.mini { width: 2.0em; }
+    }
+
+    .icons .action {
+      padding: 0.3em $action-padding;
+      margin-left: $inset;
+      svg { width: 1.3em; }
+    }
+  }
+}

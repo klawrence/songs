@@ -10,7 +10,8 @@ en:
     title: Songs Without Love
     logo:
       header:
-        small: site-logo-350.png
-        large: site-logo-logo-1000.png
-        square: site-logo-square-200.png
+        alt: Site logo
+        small: /logos/site-logo-350.png
+        large: /logos/site-logo-1000.png
+        square: /logos/site-logo-square-200.png
       open_graph: site-logo-square-200.png

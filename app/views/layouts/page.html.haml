@@ -1,0 +1,9 @@
+- content_for :body do
+  #page
+    = render 'shared/header'
+    #main
+      #content= yield
+      #footer= render 'shared/footer'
+  = render 'shared/scripts'
+
+= render template: 'layouts/application'
