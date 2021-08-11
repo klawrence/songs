@@ -1,0 +1,10 @@
+%h2.title= @artist
+
+%table.track-list
+  %thead
+    %tr
+      %th Track
+  %tbody
+    - @tracks.each do |track|
+      %tr.track
+        %td.title= link_to track.title, [@artist, track]

@@ -1,4 +1,10 @@
 # To do
 
-## Cleanup
-- strip notice at the end of lyrics
+## Test
+
+## Now
+## Next
+## Soon
+- extract a common project
+- extract an engine for sorcery authentication
+## Later

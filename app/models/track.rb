@@ -4,6 +4,8 @@ class Track < ApplicationRecord
 
   belongs_to :artist
 
+  scope :by_title, -> { order :title }
+
   def to_s
     "#{artist} — #{title}"
   end

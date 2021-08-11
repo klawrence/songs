@@ -11,15 +11,28 @@ class ArtistsControllerTest < ActionDispatch::IntegrationTest
     @elvis.tracks.create! title: 'Heartbreak Hotel'
   end
 
-
   test 'show a list of artists' do
     get artists_url
     assert_response :success
 
     assert_select '.artists-list' do
       assert_select '.artist', 3
-      assert_select '.artist:nth-of-type(1)' do
+      assert_select '.artist:first-of-type' do
         assert_select '.name', 'Bob Dylan'
+      end
+    end
+  end
+
+  test 'show an artist page' do
+    get artist_url(@bob)
+    assert_response :success
+
+    assert_select 'h2.title', 'Bob Dylan'
+
+    assert_select '.track-list' do
+      assert_select '.track', 2
+      assert_select '.track:first-of-type' do
+        assert_select '.title', 'Blowing in the Wind'
       end
     end
   end
