@@ -1,17 +1,18 @@
 require 'mechanize'
 
 class LyricsCrawler
-  def initialize site
+  def initialize site, sitemap
     @agent = Mechanize.new
     @agent.user_agent_alias = 'Mac Safari'
     @site = site
+    @sitemap = sitemap
   end
 
   def crawl_lyrics track
     puts "Fetching #{track}"
     begin
       url = "/lyrics/#{track.artist.slug}/#{track.slug}"
-      unless sitemap.include? url
+      unless available_tracks.include? url
         puts 'Not available'
         return
       end
@@ -38,10 +39,10 @@ class LyricsCrawler
     end
   end
 
-  def sitemap
-    return @sitemap if @sitemap
+  def available_tracks
+    return @tracks if @tracks
 
-    doc = File.open("config/www.sitemap-lyrics.xml") { |f| Nokogiri::XML(f) }
-    @sitemap = Set.new doc.css('loc').map(&:text).map{|url| url.gsub(/https:\/\/.+?\//, '/') }
+    doc = File.open(@sitemap) { |f| Nokogiri::XML(f) }
+    @tracks = Set.new doc.css('loc').map(&:text).map{|url| url.gsub(/https:\/\/.+?\//, '/') }
   end
 end
