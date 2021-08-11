@@ -34,7 +34,7 @@ class LyricsCrawler
 
     lyrics = page.search('.lyrics-results .inner').first
     if lyrics
-      lyrics.children.map { |node| node.name == 'br' ? "\n" : node.text.strip }.join
+      lyrics.children.map { |node| node.name.in?(['br', 'span']) ? "\n" : node.text.strip }.join
     end
   end
 
