@@ -1,4 +1,9 @@
 en:
+
+  artists:
+    index:
+      title: Artists
+
   site:
     copyright_message: "© %{year} Ragged Clown Productions, all rights reserved."
     description: What are songs about? Songs Without Love knows the answer.

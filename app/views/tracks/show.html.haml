@@ -1,0 +1,12 @@
+- configure_page title: @track.to_s
+
+.track.show.page
+  %h2.title= @track.title
+  %h3.subtitle= @artist.name
+
+  %section
+    %h4 Lyrics
+    - if @track.lyrics.present?
+      .lyrics= @track.lyrics
+    - else
+      .no-lyrics No lyrics available

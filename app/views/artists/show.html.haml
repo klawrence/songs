@@ -1,10 +1,14 @@
-%h2.title= @artist
+- configure_page title: @artist.name
 
-%table.track-list
-  %thead
-    %tr
-      %th Track
-  %tbody
-    - @tracks.each do |track|
-      %tr.track
-        %td.title= link_to track.title, [@artist, track]
+.artist.show.page
+  %h2.title= @artist
+
+  %section
+    %table.track-list
+      %thead
+        %tr
+          %th Tracks
+      %tbody
+        - @tracks.each do |track|
+          %tr.track
+            %td.title= link_to track.title, [@artist, track]

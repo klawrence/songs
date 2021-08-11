@@ -3,6 +3,6 @@ Rails.application.routes.draw do
   get '/home', to: 'pages#home'
 
   resources :artists do
-    resources :track
+    resources :tracks
   end
 end

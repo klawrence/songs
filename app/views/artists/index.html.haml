@@ -1,9 +1,12 @@
-%h2 Artists
-%table.artists-list
-  %thead
-    %tr
-      %th Artist
-  %tbody
-    - @artists.each do |artist|
-      %tr.artist
-        %td.name= link_to artist.name, artist
+- configure_page title: t('artists.index.title')
+
+.artists.index.page
+  %h2 Artists
+  %table.artists-list
+    %thead
+      %tr
+        %th Artist
+    %tbody
+      - @artists.each do |artist|
+        %tr.artist
+          %td.name= link_to artist.name, artist
