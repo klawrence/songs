@@ -6,7 +6,9 @@ crawler = LyricsCrawler.new 'https://www.songfacts.com/'
 Track.where(lyrics: nil).each do |track|
   crawler.crawl_lyrics track
 
-  interval = 300 + rand(60)
-  puts "Sleeping #{interval}"
-  sleep(interval)
+  if track.lyrics.present?
+    interval = 180 + rand(60)
+    puts "Sleeping #{interval}"
+    sleep(interval)
+  end
 end

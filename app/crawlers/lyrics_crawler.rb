@@ -10,7 +10,13 @@ class LyricsCrawler
   def crawl_lyrics track
     puts "Fetching #{track}"
     begin
-      lyrics = crawl_lyrics_page "/lyrics/#{track.artist.slug}/#{track.slug}"
+      url = "/lyrics/#{track.artist.slug}/#{track.slug}"
+      unless sitemap.include? url
+        puts 'Not available'
+        return
+      end
+
+      lyrics = crawl_lyrics_page url
       if lyrics
         track.update lyrics: lyrics
       else
@@ -30,5 +36,12 @@ class LyricsCrawler
     if lyrics
       lyrics.children.map { |node| node.name == 'br' ? "\n" : node.text.strip }.join
     end
+  end
+
+  def sitemap
+    return @sitemap if @sitemap
+
+    doc = File.open("config/www.sitemap-lyrics.xml") { |f| Nokogiri::XML(f) }
+    @sitemap = Set.new doc.css('loc').map(&:text).map{|url| url.gsub(/https:\/\/.+?\//, '/') }
   end
 end
