@@ -1,0 +1,46 @@
+$page-width: 60rem; // Was 55rem
+$min-height: 100vh;
+
+$sidebar-width: 14rem;
+$tablet-sidebar-width: 12rem;
+
+$header-desktop-height: 4.5rem;
+$header-phone-height: 3rem;
+
+$dialog-width: 32em;
+$phone-max-width: 699px;
+$tablet-max-width: 900px;
+
+@mixin phone-size {
+  @media (max-width: $phone-max-width) {
+    @content;
+  }
+}
+
+@mixin tablet-size {
+  @media (min-width: $phone-max-width + 1px) and (max-width: $tablet-max-width) {
+    @content;
+  }
+}
+
+@mixin bigger-than-phone {
+  @media (min-width: $phone-max-width + 1px) {
+    @content;
+  }
+}
+
+@mixin wide-screen {
+  @media (min-width: 1200px) {
+    @content;
+  }
+}
+@mixin wider-screen {
+  @media (min-width: 1400px) {
+    @content;
+  }
+}
+@mixin very-wide-screen {
+  @media (min-width: 1600px) {
+    @content;
+  }
+}

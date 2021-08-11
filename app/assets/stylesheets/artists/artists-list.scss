@@ -1,0 +1,14 @@
+@import 'common/constants';
+
+.artists-list {
+}
+
+@include phone-size {
+  .artists-list {
+  }
+}
+
+@include bigger-than-phone {
+  .artists-list {
+  }
+}

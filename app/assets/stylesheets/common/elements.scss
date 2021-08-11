@@ -1,0 +1,48 @@
+@import 'common/insets';
+@import 'common/borders';
+@import 'common/fonts';
+@import 'common/colors';
+@import 'common/size';
+
+body {
+  background-color: $page-background;
+  margin: 0;
+}
+
+*, *:before, *:after {
+  box-sizing: border-box;
+}
+
+ul {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+label {display: block;}
+
+input, select, textarea {
+  font-family: inherit;
+  line-height: inherit;
+  font-size: 1em;
+  margin: 0;
+}
+
+// from normalize
+[type="checkbox"], [type="radio"] {
+  padding: 0;
+}
+
+pre {
+  font-family: monospace, monospace;
+  font-size: 1em;
+}
+
+img {
+  border-style: none;
+  max-width: 100%;
+}
+
+table {
+  th, td { text-align: left; }
+}

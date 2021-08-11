@@ -1,0 +1,8 @@
+- if analytics_cookies_ok?
+  %script{async:"", src: "https://www.googletagmanager.com/gtag/js?id=#{Rails.application.config.google_analytics_id}"}
+
+  :javascript
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);}
+    gtag('js', new Date())
+    gtag('config', "#{Rails.application.config.google_analytics_id}", {anonymize_ip: true})

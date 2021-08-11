@@ -1,0 +1,4 @@
+.flash-messages
+  - [:notice, :error, :alert].each do |level|
+    - unless flash[level].blank?
+      .alert{class: level}= flash[level]

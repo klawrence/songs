@@ -1,0 +1,43 @@
+@import 'common/constants';
+
+table {
+  border-spacing: 0;
+
+  td, th {
+    vertical-align: top;
+    text-align: left;
+    padding: 0 $inset 0 0;
+    &.count { text-align: right; }
+  }
+}
+
+table.multi-row {
+  tr.first-row {
+    th, td {
+      padding-top: $margin;
+      border-top: $border;
+    }
+  }
+
+  tr.last-row {
+    th, td {
+      padding-bottom: $margin;
+      border-bottom: $border;
+    }
+  }
+}
+
+table.bordered {
+  th, td {
+    vertical-align: top;
+    border-top: $border;
+    border-right: $border;
+    padding: $inset;
+    &:first-of-type { border-left: $border; }
+  }
+  tr:last-of-type {
+    th, td {
+      border-bottom: $border;
+    }
+  }
+}

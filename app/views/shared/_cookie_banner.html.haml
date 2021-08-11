@@ -1,0 +1,8 @@
+- if show_cookie_banner?
+  #cookie-banner.cookie-banner
+    .actions
+      = link_to 'Cookie Settings', cookies_path, class: 'button clear'
+      = link_to 'Accept Cookies',  cookies_path, class: 'button primary', method: :post, remote: true
+    .text
+      We use cookies and third party services to enhance our website's functionality, to analyse our traffic and to provide a better experience for our visitors.
+      = link_to 'You can read our cookie policy here.', cookies_path

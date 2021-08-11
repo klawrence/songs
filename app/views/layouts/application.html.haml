@@ -1,0 +1,8 @@
+!!!
+%html{lang: 'en'}
+  %head= render 'shared/head'
+  %body
+    = render 'shared/flash-messages'
+    = content_for?(:body) ? content_for(:body) : yield
+    = render 'shared/analytics'
+    = render 'shared/cookie_banner'

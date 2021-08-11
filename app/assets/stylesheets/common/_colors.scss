@@ -1,0 +1,151 @@
+// TODO separate the color definitions from the color elements
+
+$page-background: #accfd9;
+$app-background: #f1f8f9;
+$content-background: #fff;
+
+$brand-1: #a3d0db;
+$brand-2: #6bb9c6;
+$brand-3: #3c87ac;
+$brand-4: #17365e;
+$brand-5: #4f4e50;
+$brand-6: #3a82a5;
+
+$background-1: #eaf2f4;
+$background-2: #d8e9ed;
+$accent-background: #e2ecf2;
+
+$highlight-1: #f47d3d;
+$highlight-2: #53a0b9;
+
+$gray: #b9b9b9;
+$medium-gray: #ddd;
+$darker-gray: #929292;
+$medium-gray-background: #838587;
+$light-gray-background: #fbfbfb;
+$light-blue-gray-background: #f6f9fa;
+
+$warning: #d4743e;
+$alert-color: #d84d37;
+
+$text-color: #4f4e50;
+$text-color-light: #919192;
+$text-color-dark: #333;
+$text-color-faded: #888788;
+$text-color-white: #FFF;
+$text-color-error: $warning;
+
+$header-background: $content-background;
+$header-color: $text-color;
+$page-header-contrast: $accent-background;
+
+$footer-background: #8A8B84;
+
+$banner-text-color: white;
+$profile-blue: #cdd4d7;
+
+
+$link-color: $brand-6;
+$link-color-hover: lighten($link-color, 10%);
+$link-color-visited: $brand-3;
+
+$disabled-color: #AAA;
+$border-color: $profile-blue;
+$border-color-light: #e9ebee;
+$border-accent: #b8dbe2;
+$border-hover-color: $border-accent;
+$shadow-color: rgba(131, 133, 135, .25);
+
+$light-blue-border:#cce6eb;
+
+
+$action-color: #a6a6a7;
+$action-hover-color: #888788;
+$action-selected-color: #3c87ac;
+$action-selected-color-contrast: $brand-6;
+$action-active-color: #11234D;
+$action-hover-background: #eef0f2;
+$header-action-color: #888788;
+$action-panel-background: $light-gray-background;
+
+
+$dialog-background: #f4fafb;
+$dialog-title-background: $brand-6;
+$dialog-title-color: #fff;
+$dialog-footer-background: #e2ecf2;
+$dialog-background-mask: rgba(33, 33, 33, 0.80);
+
+
+$toolbar-background: $accent-background;
+$profile-widget-background: $accent-background;
+$tip-background: $accent-background;
+$notice-background: $accent-background;
+$error-background: lighten($warning, 20%);
+$warning-background: lighten($warning, 40%);
+$error-border-color: $border-color;
+
+$button-color: #FFF;
+$button-background: #a2a4a7;
+$button-clear-color: $medium-gray-background;
+$button-accent: $medium-gray-background;
+
+$button-hover-background: #6c6d6f;
+$button-hover-accent: #8c8d8f;
+
+$button-active-background: #636566;
+$button-active-accent: #636566;
+
+$button-disabled-background: #dbdcdf;
+$button-disabled-accent: #c7c9cc;
+
+$button-warning-background: lighten($alert-color, 10%);
+$button-warning-accent: $alert-color;
+
+$button-primary-background: #4d80a2;
+$button-primary-accent: #285c81;
+$button-primary-hover-background: #285c81;
+$button-primary-hover-accent: #17365e;
+$button-primary-active-background: #17365e;
+$button-primary-active-accent: #082546;
+$button-primary-disabled-background: #c4d9e4;
+$button-primary-disabled-accent: #abbdc8;
+
+
+$button-action-background: #d84d37;
+$button-action-accent: #b3402b;
+$button-action-hover-background: #b3402b;
+$button-action-hover-accent: #95341f;
+$button-action-active-background: darken($button-action-background, 20%);
+
+$menu-button-color: #FFF;
+$menu-button-background: $medium-gray-background;
+$menu-button-border: #6c6d6f;
+
+$selection-background: #eaecee;
+
+$popup-menu-background: transparent;
+$popup-menu-background-hover: transparent;
+$popup-menu-background-active: $light-gray-background;
+$popup-menu-background-selected: $selection-background;
+$popup-menu-border-color: $profile-blue;
+
+$global-menu-background: $light-gray-background;
+$global-menu-background-hover: #eaf2f4;
+$global-menu-background-active: #e2ecf2;
+$global-menu-background-selected: #d2dbe1;
+$global-menu-border-color: $profile-blue;
+
+
+$input-border: #c5c9cf;
+$checkbox-color: white;
+$checkbox-check-color: $brand-3;
+$checkbox-border: $input-border;
+$focus-color: $button-primary-accent;
+$disabled-input-color: lighten($text-color-faded, 5%);
+
+$tab-color: $text-color;
+$tab-background: $light-gray-background;
+$tab-selected-background: $accent-background;
+
+$flash-background: $highlight-2;
+$flash-color: white;

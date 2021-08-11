@@ -1,0 +1,16 @@
+@import 'common/constants';
+
+ul.bullets {
+  margin: 0 0 $margin 1.2em;
+  list-style: disc;
+  ul {
+    list-style: none;
+    li:before {content: "» ";}
+  }
+}
+
+ol {
+  li { list-style: decimal; }
+  ol li { list-style: lower-alpha; }
+  ol ol li { list-style: lower-roman; }
+}
