@@ -1,3 +1,9 @@
-%h1 Pages#home
-%p Find me in app/views/pages/home.html.haml
+.home.page
+  %h1.title= t('site.name')
+  %h2.tagline= t('site.tagline')
 
+  - @charts.each do |chart|
+    %section.decade
+      %h3= chart.name
+      %p.artists
+        = chart.entries.map(&:track).map(&:artist).map(&:name).uniq.sort.join(', ')

@@ -2,7 +2,7 @@
 
 
 .page {
-  .subtitle { color: $text-color-faded; }
+  .subtitle, .tagline { color: $text-color-faded; }
   section {
     margin: $margin 0;
   }

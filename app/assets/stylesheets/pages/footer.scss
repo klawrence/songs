@@ -1,0 +1,63 @@
+@import 'common/constants';
+
+.footer {
+  padding: $margin;
+  justify-content: space-evenly;
+
+  background-color: $footer-background;
+  .site-menu {
+    display: flex;
+    flex-flow: wrap;
+    ul {
+      .title { color: $text-color-white; }
+    }
+
+    color: $text-color-dark;
+    a { color: inherit !important; }
+  }
+
+  .sub-footer {
+    border-top: solid 1px $gray;
+    font-size: 1rem;
+    a { color: inherit !important; }
+  }
+}
+
+@include phone-size {
+  .footer {
+    font-size: 1rem;
+
+    .site-menu {
+      ul {
+        margin: $margin $margin*2 $margin 0;
+        width: 8em;
+      }
+    }
+
+    .sub-footer {
+      border-top: solid 1px $gray;
+      padding: $margin 0;
+      font-size: 1rem;
+    }
+  }
+}
+
+
+@include bigger-than-phone {
+  .footer {
+    font-size: 1.2rem;
+
+    .site-menu {
+      ul {
+        margin: $margin;
+        width: 10em;
+      }
+    }
+
+    .sub-footer {
+      padding: $margin;
+    }
+
+
+  }
+}

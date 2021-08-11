@@ -4,6 +4,8 @@ class Chart < ApplicationRecord
 
   has_many :entries
 
+  scope :by_name, -> { order :name }
+
   # Pass in an array of entries of the form
   # ['artist name', 'track name']
   # to create the chart entries
