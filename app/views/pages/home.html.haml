@@ -7,3 +7,4 @@
       %h3= chart.name
       %p.artists
         = chart.entries.map(&:track).map(&:artist).map(&:name).uniq.sort.join(', ')
+      .react-wordcloud{ data: { url: "/wordclouds/#{chart.name}" }}
