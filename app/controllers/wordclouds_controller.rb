@@ -31,7 +31,8 @@ class WordcloudsController < ApplicationController
   end
 
   STOPWORDS = Set.new(%w[
-      and the with its all youll youre there cause didnt where
-      theyll those theyre could
+      and the with its all  cause didnt where
+      youll youre youve
+      there theyll those theyre could
 ])
 end

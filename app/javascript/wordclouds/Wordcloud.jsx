@@ -2,6 +2,12 @@ import React from 'react'
 import ReactWordcloud from 'react-wordcloud'
 import {fetchCloud} from './api'
 
+const size = [800, 400]
+const options = {
+  fontFamily: 'impact',
+  rotations: 0
+}
+
 export class Wordcloud extends React.Component {
   constructor(props) {
     super(props)
@@ -14,12 +20,8 @@ export class Wordcloud extends React.Component {
   render() {
     const {words} = this.state
 
-    const options = {
-      // rotations: 2,
-      // rotationAngles: [-90, 0],
-    }
     return <div className='wordcloud'>
-      <ReactWordcloud words={words} size={[800, 400]} options={options}/>
+      <ReactWordcloud words={words} size={size} options={options} />
     </div>
   }
 
