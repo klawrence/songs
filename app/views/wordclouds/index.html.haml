@@ -1,0 +1,7 @@
+.wordclouds.index.page
+  %h1.title= t('site.name')
+  %h2.tagline= t('site.tagline')
+
+  %section.decade
+    %h3= @chart.name
+    .react-wordcloud{ data: { url: "/wordclouds/#{@chart.name}.json" }}

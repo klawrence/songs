@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   resources :artists do
     resources :tracks
   end
+
+  resources :wordclouds
 end

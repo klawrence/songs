@@ -5,6 +5,6 @@
   - @charts.each do |chart|
     %section.decade
       %h3= chart.name
-      %p.artists
-        = chart.entries.map(&:track).map(&:artist).map(&:name).uniq.sort.join(', ')
-      .react-wordcloud{ data: { url: "/wordclouds/#{chart.name}" }}
+      -#%p.artists
+         = chart.entries.map(&:track).map(&:artist).map(&:name).uniq.sort.join(', ')
+      .react-wordcloud{ data: { url: "/wordclouds/#{chart.name}.json" }}
