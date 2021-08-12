@@ -30,6 +30,7 @@ class LyricsCrawler
     if lyrics
       lyrics.children.map { |node| node.name.in?(['br', 'span']) ? "\n" : node.text.strip }.join
     else
+      puts page.search('body h1').first.text
       raise 'No lyrics found'
     end
   end
