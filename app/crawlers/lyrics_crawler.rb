@@ -10,32 +10,27 @@ class LyricsCrawler
 
   def crawl_lyrics track
     puts "Fetching #{track}"
-    begin
-      url = "/lyrics/#{track.artist.slug}/#{track.slug}"
-      unless available_tracks.include? url
-        puts 'Not available'
-        return
-      end
-
-      lyrics = crawl_lyrics_page url
-      if lyrics
-        track.update lyrics: lyrics
-      else
-        raise 'No lyrics found'
-      end
-    rescue => error
-      puts error
+    url = "/lyrics/#{slug track.artist.name}/#{slug track.title}"
+    unless available_tracks.include? url
+      puts 'Not available'
+      return
     end
+
+    lyrics = crawl_lyrics_page url
+    track.update lyrics: lyrics if lyrics
+  end
+
+  def slug text
+    text.downcase.gsub(/[^a-z0-9 ]/, '').gsub(/ +/, '-')
   end
 
   def crawl_lyrics_page path
     page = @agent.get path, [], @site
-    # page.search('#lyric-body-text').text
-
-
     lyrics = page.search('.lyrics-results .inner').first
     if lyrics
       lyrics.children.map { |node| node.name.in?(['br', 'span']) ? "\n" : node.text.strip }.join
+    else
+      raise 'No lyrics found'
     end
   end
 

@@ -8,7 +8,9 @@
       %thead
         %tr
           %th Tracks
+          %th Lyrics
       %tbody
         - @tracks.each do |track|
           %tr.track
             %td.title= link_to track.title, [@artist, track]
+            %td.check= track.lyrics.present? ? '✓' : ''
