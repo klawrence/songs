@@ -9,6 +9,8 @@ gem 'puma', '~> 5.0'
 gem 'sass-rails', '>= 6'
 gem 'haml-rails'
 gem 'jbuilder', '~> 2.7'
+gem 'webpacker'
+
 
 gem 'friendly_id'
 gem 'bootsnap', '>= 1.4.4', require: false
